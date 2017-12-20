@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/searchToolbarHeight">
+
+    <LinearLayout
+        android:id="@+id/search_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/search_start_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingLeft="17dp"
+            android:visibility="visible">
+
+
+            <TextView
+                android:id="@+id/iv_search_city_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="附近"
+                android:textColor="@color/color_bg_yellow"
+                android:textSize="@dimen/common_font_17" />
+
+            <ImageView
+                android:id="@+id/iv_search_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/common_margin_4"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/near_selector" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_search_start_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingLeft="17dp"
+            android:src="@drawable/ic_back"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_search_container"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/search_ll"
+        android:background="@drawable/drawable_search_bg"
+        android:minWidth="300dp">
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/search_icon" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:background="#00000000"
+            android:gravity="center_vertical"
+            android:hint="输入搜索的商家名称"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/common_text_color_666666"
+            android:textColorHint="@color/common_text_color_666666"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:textSize="@dimen/common_font_14" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/iv_search_end"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="bottom"
+        android:paddingLeft="17dp"
+        android:paddingRight="17dp"
+        android:src="@drawable/ic_recharge"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

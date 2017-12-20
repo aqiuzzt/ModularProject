@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_home_notice_ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/item_home_notice_data_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="2dp"
+        android:drawableRight="@drawable/arrow_right_small"
+        android:ellipsize="end"
+        android:gravity="left|center"
+        android:maxLines="1"
+        android:textColor="@color/common_text_color_333333"
+        android:textSize="@dimen/common_font_14"
+        tools:text="红星专区已上线，欢迎购买。" />
+
+
+</LinearLayout>

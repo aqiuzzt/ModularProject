@@ -1,0 +1,258 @@
+apply plugin: 'com.android.application'
+
+//获取时间戳
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmm')
+    return formattedDate
+}
+
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+
+        multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+
+    signingConfigs {
+
+        debug {
+            keyAlias '333'
+            keyPassword '333@333'
+            storeFile file(rootProject.ext.signPath)
+            storePassword '333@333'
+        }
+
+
+        release {
+            keyAlias '333'
+            keyPassword '333@333'
+            storeFile file(rootProject.ext.signPath)
+            storePassword '333@333'
+        }
+
+
+        product {
+            keyAlias '333'
+            keyPassword '333@333'
+            storeFile file(rootProject.ext.signPath)
+            storePassword '333@333'
+        }
+
+    }
+
+    //网易奔溃
+    defaultConfig {
+        ndk {
+            //设置支持的SO库架构
+            abiFilters "armeabi", "x86"//,"armeabi-v7a","arm64-v8a","x86_64"
+        }
+
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    buildTypes {
+
+        debug {
+            debuggable rootProject.ext.isBetaDebug
+            buildConfigField "int", "ENVIRONMENT", "1"
+            minifyEnabled false
+            manifestPlaceholders = [shop_app_suffix: "Debug"]
+            signingConfig signingConfigs.debug
+        }
+        release {
+
+            debuggable rootProject.ext.isReleaseDebug
+            buildConfigField "int", "ENVIRONMENT", "2"
+            //混淆开启
+            minifyEnabled false
+            //apk对齐优化
+            zipAlignEnabled false
+            // 移除无用的resource文件
+            shrinkResources false
+            manifestPlaceholders = [shop_app_suffix: "release"]
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+
+        product {
+            debuggable rootProject.ext.isProductDebug
+            buildConfigField "int", "ENVIRONMENT", "3"
+            //混淆开启
+            minifyEnabled false
+            //apk对齐优化
+            zipAlignEnabled false
+            // 移除无用的resource文件
+            shrinkResources false
+            shrinkResources false
+            manifestPlaceholders = [shop_app_suffix: "product"]
+            signingConfig signingConfigs.product
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+
+    }
+
+    sourceSets {
+        //实现主题切换
+        main {
+            res.srcDirs = ['src/main/res', 'src/main/res-lsg']
+        }
+
+
+        dbb {
+            res.srcDirs = ['src/dbb/res']
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/dbb/java']
+
+        }
+        gjeg {
+            res.srcDirs = ['src/gjeg/res']
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/gjeg/java']
+        }
+
+        hcwx {
+            res.srcDirs = ['src/hcwx/res']
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/hcwx/java']
+
+        }
+        lsg {
+            res.srcDirs = ['src/lsg/res']
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/lsg/java']
+        }
+
+
+    }
+
+    flavorDimensions "mode"
+    productFlavors {//不同定制的产品，构建差异非常小的产品版本
+        dbb {
+            dimension "mode"
+            applicationId rootProject.ext.android.applicationId + 'dbb'
+            versionCode 22
+            versionName "3.2.1"
+            manifestPlaceholders = [shop_app_name: "app1"]
+        }
+        gjeg {
+            dimension "mode"
+            applicationId rootProject.ext.android.applicationId + 'gjeg'
+            versionCode 01
+            versionName "1.0.0"
+            manifestPlaceholders = [shop_app_name: "app2"]
+        }
+
+        hcwx {
+            dimension "mode"
+            applicationId rootProject.ext.android.applicationId + 'hcwx'
+            versionCode 01
+            versionName "1.0.0"
+            manifestPlaceholders = [shop_app_name: "app3"]
+        }
+
+        lsg {
+            dimension "mode"
+            applicationId rootProject.ext.android.applicationId + 'lsg'
+            versionCode 01
+            versionName "1.0.0"
+            manifestPlaceholders = [shop_app_name: "app4"]
+        }
+
+    }
+
+    //修改生成的apk名字
+    applicationVariants.all { variant ->
+
+        if (variant.buildType.name.equals('release')) {
+            variant.outputs.all {
+                def appName = 'cmall'
+                outputFileName = appName + '_v' + versionName + '_' + getDate() + '_release.apk'
+            }
+        } else if (variant.buildType.name.equals('product')) {
+            variant.outputs.all {
+                def appName = 'cmall'
+                outputFileName = appName + '_v' + versionName + '_' + getDate() + '_product.apk'
+            }
+        } else {
+            variant.outputs.all {
+                def appName = 'cmall'
+                outputFileName = appName + '_v' + versionName + '_' + getDate() + '_debug.apk'
+            }
+        }
+    }
+
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+
+    if(rootProject.ext.isMouleDebugHome) {
+        implementation project(':modules:homesModule')
+    }
+
+    if(rootProject.ext.isMouleDebugMarket) {
+        implementation project(':modules:marketModule')
+    }
+    if(rootProject.ext.isMouleDebugMe) {
+        implementation project(':modules:meModule')
+    }
+
+    if(rootProject.ext.isModuleMain) {
+        implementation project(':modules:mainModule')
+    }
+
+    //注解绑定
+    api rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    //流式布局，标签选择
+    api rootProject.ext.dependencies["flowlayout-lib"]
+    //原型头像
+    api rootProject.ext.dependencies["roundedimageview"]
+    //eventsbus
+    api rootProject.ext.dependencies["eventbus"]
+    //Android check permission 权限校验
+    api rootProject.ext.dependencies["permission_acp"]
+    //图片选择器
+    api rootProject.ext.dependencies["picture_library"]
+
+    annotationProcessor rootProject.ext.dependencies["aroutercompiler"]
+
+}

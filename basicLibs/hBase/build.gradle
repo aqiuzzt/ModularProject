@@ -1,0 +1,119 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+//        resourcePrefix "base_"
+
+        //ARouter配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+
+    android {
+        publishNonDefault true
+    }
+
+    buildTypes {
+
+        debug {
+            debuggable rootProject.ext.isBetaDebug
+            buildConfigField "int", "ENVIRONMENT", "1"
+        }
+        release {
+            debuggable rootProject.ext.isReleaseDebug
+            buildConfigField "int", "ENVIRONMENT", "2"
+        }
+
+        product {
+            debuggable rootProject.ext.isProductDebug
+            buildConfigField "int", "ENVIRONMENT", "3"
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    sourceSets {
+
+        main {
+            res.srcDirs = ['src/main/res']
+        }
+
+        dbb {
+            res.srcDirs = ['src/main/res']
+
+        }
+        gjeg {
+            res.srcDirs = ['src/main/res']
+        }
+
+        hcwx {
+            res.srcDirs = ['src/main/res']
+
+        }
+        lsg {
+            res.srcDirs = ['src/main/res']
+        }
+    }
+
+    flavorDimensions "mode"
+    productFlavors {//不同定制的产品，构建差异非常小的产品版本
+        dbb {
+
+        }
+        gjeg {
+
+        }
+
+        hcwx {
+        }
+
+        lsg {
+        }
+
+    }
+
+
+
+}
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    api project(':uiComponents:hWidget')
+    api project(':businessLibs:hPaySdk')
+//    api(name:'hPaySdk-product', ext:'aar'){
+//        transitive = false
+//    }
+    api project(':basicLibs:hconfig')
+    api rootProject.ext.dependencies["arouterapi"]
+    annotationProcessor rootProject.ext.dependencies["aroutercompiler"]
+
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+
+
+
+}

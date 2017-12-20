@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="VerifyCodeButton">
+        <attr name="normalText" format="string" />
+        <attr name="sendingFormat" format="string" />
+        <attr name="reSendText" format="string" />
+        <attr name="countDownTime" format="integer" />
+    </declare-styleable>
+
+
+    <!--数字进度条-->
+    <declare-styleable name="NumberProgressBar">
+        <attr name="progress_current" format="integer" />
+        <attr name="progress_max" format="integer" />
+
+        <attr name="progress_unreached_color" format="color" />
+        <attr name="progress_reached_color" format="color" />
+
+        <attr name="progress_reached_bar_height" format="dimension" />
+        <attr name="progress_unreached_bar_height" format="dimension" />
+
+        <attr name="progress_text_size" format="dimension" />
+        <attr name="progress_text_color" format="color" />
+
+        <attr name="progress_text_offset" format="dimension" />
+
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="Themes">
+        <attr name="numberProgressBarStyle" format="reference" />
+    </declare-styleable>
+
+    <!--数字进度条-->
+
+
+    <declare-styleable name="Banner">
+        <attr name="delay_time" format="integer" />
+        <attr name="scroll_time" format="integer" />
+        <attr name="is_auto_play" format="boolean" />
+        <attr name="title_background" format="color|reference" />
+        <attr name="title_textcolor" format="color" />
+        <attr name="title_textsize" format="dimension" />
+        <attr name="title_height" format="dimension" />
+        <attr name="indicator_width" format="dimension" />
+        <attr name="indicator_height" format="dimension" />
+        <attr name="indicator_margin" format="dimension" />
+        <attr name="indicator_drawable_selected" format="reference" />
+        <attr name="indicator_drawable_unselected" format="reference" />
+        <attr name="image_scale_type" format="enum">
+            <enum name="center" value="0" />
+            <enum name="center_crop" value="1" />
+            <enum name="center_inside" value="2" />
+            <enum name="fit_center" value="3" />
+            <enum name="fit_end" value="4" />
+            <enum name="fit_start" value="5" />
+            <enum name="fit_xy" value="6" />
+            <enum name="matrix" value="7" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="PasswordInputView">
+        <attr name="pivBorderColor" format="color" />
+        <attr name="pivBorderWidth" format="dimension" />
+        <attr name="pivBorderRadius" format="dimension" />
+        <attr name="pivPasswordColor" format="color" />
+        <attr name="pivPasswordWidth" format="dimension" />
+        <attr name="pivPasswordRadius" format="dimension" />
+        <attr name="pivPasswordLength" format="integer" />
+        <attr name="pivItemHeight" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="MaterialSlideBar">
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
+        <attr name="textGap" format="dimension" />
+        <attr name="textSelectedBold" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SearchToolbar">
+        <attr name="srcStart" format="reference" />
+        <attr name="srcEnd" format="reference" />
+        <attr name="editEnable" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="DividerTabLayout">
+        <attr name="android:showDividers" />
+        <attr name="android:divider" />
+        <attr name="android:dividerPadding" />
+    </declare-styleable>
+    <declare-styleable name="DropDownLayout">
+        <attr name="maskColor" format="color|reference" />
+        <attr name="maxHeight" format="dimension" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,168 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        //ARouter配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    android {
+        publishNonDefault true
+    }
+
+    buildTypes {
+
+        debug {
+            debuggable rootProject.ext.isBetaDebug
+            buildConfigField "int", "ENVIRONMENT", "1"
+        }
+        release {
+            debuggable rootProject.ext.isReleaseDebug
+            buildConfigField "int", "ENVIRONMENT", "2"
+        }
+
+        product {
+            debuggable rootProject.ext.isProductDebug
+            buildConfigField "int", "ENVIRONMENT", "3"
+        }
+    }
+
+    sourceSets {
+
+        dbb {
+            res.srcDirs = ['src/dbb/res']
+            java.srcDirs = ['src/dbb/java']
+
+        }
+        gjeg {
+            res.srcDirs = ['src/gjeg/res']
+            java.srcDirs = ['src/gjeg/java']
+        }
+
+        hcwx {
+            res.srcDirs = ['src/hcwx/res']
+            java.srcDirs = ['src/hcwx/java']
+
+        }
+        lsg {
+            res.srcDirs = ['src/lsg/res']
+            java.srcDirs = ['src/lsg/java']
+        }
+    }
+
+    flavorDimensions "mode"
+    productFlavors {//不同定制的产品，构建差异非常小的产品版本
+        dbb {
+
+        }
+        gjeg {
+
+        }
+
+        hcwx {
+        }
+
+        lsg {
+        }
+
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    api rootProject.ext.dependencies["support-v4"]
+    api rootProject.ext.dependencies["appcompat-v7"]
+//    api project(':skin-android-support:skin-support')
+    api rootProject.ext.dependencies["design"]
+//    api project(':skin-android-support:skin-support-design')
+    api rootProject.ext.dependencies["recyclerview"]
+    api rootProject.ext.dependencies["cardview"]
+//    api project(':skin-android-support:skin-support-cardview')
+    api rootProject.ext.dependencies["constraint-layout"]
+//    api project(':skin-android-support:skin-support-constraint-layout')
+    //支持多dex打包
+    api rootProject.ext.dependencies["multidex"]
+
+    api rootProject.ext.dependencies["rxjava2_rxandroid"]
+    api rootProject.ext.dependencies["rxjava"]
+    api rootProject.ext.dependencies["retrofit"]
+    api rootProject.ext.dependencies["adapter-rxjava"]
+    api rootProject.ext.dependencies["okhttp"]
+    //json解析
+    api rootProject.ext.dependencies["gson"]
+    //二维码
+    api rootProject.ext.dependencies["zxing"]
+    //rx权限请求
+    api rootProject.ext.dependencies["rxpermissions"]
+    //适配器
+    api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+    //litepal 数据库
+    api rootProject.ext.dependencies["litepal_core"]
+
+    //分割线
+    api rootProject.ext.dependencies["recycleritemdecoration"]
+
+    //省市级选择器
+    api rootProject.ext.dependencies["Android-PickerView"]
+
+    //上拉下拉刷新
+    api rootProject.ext.dependencies["SmartRefreshLayout"]
+
+    api rootProject.ext.dependencies["systembartint"]
+
+
+
+    api rootProject.ext.dependencies["arouterapi"]
+    annotationProcessor rootProject.ext.dependencies["aroutercompiler"]
+
+    //流式布局，标签选择
+    api rootProject.ext.dependencies["flowlayout-lib"]
+    //原型头像
+    api rootProject.ext.dependencies["roundedimageview"]
+    //eventsbus
+    api rootProject.ext.dependencies["eventbus"]
+    //Android check permission 权限校验
+    api rootProject.ext.dependencies["permission_acp"]
+    //图片选择器
+    api rootProject.ext.dependencies["picture_library"]
+
+    //注解绑定
+    api rootProject.ext.dependencies["butterknife"]
+
+    api(name:'FlycoTab-product', ext:'aar')
+    api(name:'photoview-product', ext:'aar')
+    api(name:'BGABadgeView-product', ext:'aar')
+    api(name:'autoscrollback-product', ext:'aar')
+//    implementation project(':uiComponents:FlycoTab')
+//    implementation project(':skin-third-part-support:flycotablayout')
+//    implementation project(':uiComponents:photoview')
+//    implementation project(':uiComponents:BGABadgeView')
+//    implementation project(':uiComponents:autoscrollback')
+//    api project(':skin-third-part-support:circleimageview')
+//    api project(':skin-third-part-support:androidautolayout')
+
+
+    api project(':basicLibs::hconfig')
+
+
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimenDividerMargin17dp">17dp</dimen>
+    <dimen name="dimenDividerHeight_0dp">0dp</dimen>
+    <dimen name="dimenDividerHeight_0.5dp">0.5dp</dimen>
+    <dimen name="dimenDividerHeight">1dp</dimen>
+    <dimen name="dimenDividerHeight_2dp">2dp</dimen>
+    <dimen name="dimenDividerHeight_4dp">4dp</dimen>
+    <dimen name="dimenDividerHeight_7dp">7dp</dimen>
+    <dimen name="dimenDividerHeight_15dp">15dp</dimen>
+    <dimen name="dimenDividerHeight_20dp">20dp</dimen>
+    <dimen name="dimenDividerMarginLeft">0dp</dimen>
+    <color name="colorDividerLine">#ebebeb</color>
+    <color name="colorWindowBackground">#ebebeb</color>
+
+    <dimen name="common_font_10">10sp</dimen>
+    <dimen name="common_font_11">11sp</dimen>
+    <dimen name="common_font_12">12sp</dimen>
+    <dimen name="common_font_13">13sp</dimen>
+    <dimen name="common_font_14">14sp</dimen>
+    <dimen name="common_font_15">15sp</dimen>
+    <dimen name="common_font_16">16sp</dimen>
+    <dimen name="common_font_17">17sp</dimen>
+    <dimen name="common_font_18">18sp</dimen>
+    <dimen name="common_font_20">20sp</dimen>
+    <dimen name="common_font_24">24sp</dimen>
+    <dimen name="common_font_30">30sp</dimen>
+    <dimen name="common_margin_17">17dp</dimen>
+    <dimen name="common_margin_15">15dp</dimen>
+    <dimen name="common_margin_14">14dp</dimen>
+    <dimen name="common_margin_2">2dp</dimen>
+    <dimen name="common_margin_4">4dp</dimen>
+    <dimen name="common_margin_6">6dp</dimen>
+    <dimen name="common_margin_10">10dp</dimen>
+    <dimen name="common_margin_12">12dp</dimen>
+    <dimen name="common_margin_20">20dp</dimen>
+    <dimen name="common_margin_30">30dp</dimen>
+    <dimen name="common_margin_40">40dp</dimen>
+
+    <dimen name="btn_elevation_dp">0dp</dimen>
+
+
+    <dimen name="common_button_width">250dp</dimen>
+    <dimen name="common_button_height">40dp</dimen>
+    <dimen name="common_list_height">45dp</dimen>
+</resources>

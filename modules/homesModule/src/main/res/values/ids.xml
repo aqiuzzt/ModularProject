@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="toolbar" type="id"/>
+    <item name="toolbar_title_view" type="id"/>
+    <item name="toolbar_menu_title_view" type="id"/>
+    <item name="id_stickynavlayout_topview" type="id"/>
+    <item name="id_stickynavlayout_viewpager" type="id"/>
+    <item name="id_stickynavlayout_indicator" type="id"/>
+    <item name="id_stickynavlayout_innerscrollview" type="id"/>
+
+    <item name="decode" type="id"/>
+    <item name="decode_failed" type="id"/>
+    <item name="decode_succeeded" type="id"/>
+    <item name="quit" type="id"/>
+    <item name="restart_preview" type="id"/>
+    <item name="return_scan_result" type="id"/>
+</resources>

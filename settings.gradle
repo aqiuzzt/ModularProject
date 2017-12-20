@@ -1,0 +1,21 @@
+//具体的业务模块层
+include ':app'
+include ':app1'
+
+//业务组件层
+include ':modules:meModule',
+        ':modules:marketModule',
+        ':modules:homesModule',
+        ':modules:mainModule'
+
+//基础组件层
+include ':basicLibs:hCommon',
+        ':basicLibs:hBase',
+        ':basicLibs:hconfig'
+
+include ':businessLibs:hPaySdk'
+
+//独立组件，更多的是和UI相关
+include ':uiComponents:hWidget'
+
+

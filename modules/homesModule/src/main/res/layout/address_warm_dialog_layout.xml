@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lLayout_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/common_cornor_rectangle_cutout_white_yellow_shape"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dimenDividerHeight_20dp"
+        android:background="@drawable/ic_warming" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="本次获取地址一旦确定无法更改"
+        android:textColor="@color/common_text_color_666666"
+        android:textSize="@dimen/common_font_14" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="@dimen/common_margin_10"
+        android:gravity="center"
+        android:text="如遇特殊情况请联系客服"
+        android:textColor="@color/common_text_color_666666"
+        android:textSize="@dimen/common_font_14" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/alertdialog_line"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_margin_20"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cd_neg_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/alertdialog_left_selector"
+            android:gravity="center"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="@dimen/common_font_16" />
+
+        <ImageView
+            android:id="@+id/cd_img_line"
+            android:layout_width="0.5dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@color/alertdialog_line" />
+
+        <Button
+            android:id="@+id/cd_pos_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="1"
+            android:background="@drawable/alertdialog_left_selector"
+            android:gravity="center"
+            android:textColor="@color/color_bg_red_ff8447"
+            android:textSize="@dimen/common_font_16" />
+    </LinearLayout>
+
+</LinearLayout>

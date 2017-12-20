@@ -1,0 +1,116 @@
+def supportVersion = "26.1.0"
+def constraintLayoutVersion = "1.0.2"
+def retrofitVersion = "2.2.0"
+def okHttpVersion = "3.7.0"
+def stethoVersion = "1.5.0"
+def butterKnifeVersion = "8.8.1"
+def daggerVersion = "2.8"
+def ormLiteVersion = "4.48"
+def leakcanaryVersion = "1.5.1"
+def smartRefreshLayoutVersion = "1.0.3"
+def eventbusVersion = "3.0.0"
+def multidexVersion = "1.0.1"
+
+
+ext {
+    android = [
+            compileSdkVersion: 26,
+            buildToolsVersion: "26.0.2",
+            applicationId    : "com.hdh.mall.all.debug",
+            minSdkVersion    : 17,
+            targetSdkVersion : 26,
+            versionCode      : 10,
+            versionName      : "1.4.1"
+    ]
+
+    dependencies = [
+            //android-support
+            "support-v4"                   : "com.android.support:support-v4:${supportVersion}",
+            "appcompat-v7"                 : "com.android.support:appcompat-v7:${supportVersion}",
+            "design"                       : "com.android.support:design:${supportVersion}",
+            "recyclerview"                 : "com.android.support:recyclerview-v7:${supportVersion}",
+            "cardview"                     : "com.android.support:cardview-v7:${supportVersion}",
+            "multidex"                     : "com.android.support:multidex:${multidexVersion}",
+            "constraint-layout"            : "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}",
+            "support-core-utils"           : "com.android.support:support-core-utils:${supportVersion}",
+
+            //java8-support
+            "stream"                       : "com.annimon:stream:1.0.8",
+
+            //ARouter
+            arouterapi                     : 'com.alibaba:arouter-api:1.2.4',
+            aroutercompiler                : 'com.alibaba:arouter-compiler:1.1.4',
+
+            //leakcanary
+            "leakcanary-android"           : "com.squareup.leakcanary:leakcanary-android:${leakcanaryVersion}",
+            "leakcanary-android-no-op"     : "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanaryVersion}",
+
+            //rxjava2
+            "rxjava2_rxandroid"            : "io.reactivex.rxjava2:rxandroid:2.0.1",
+            "rxjava"                       : "io.reactivex.rxjava2:rxjava:2.0.7",
+
+            //retrofit
+            "retrofit"                     : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            "adapter-rxjava"               : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+
+            //dagger
+            "dagger"                       : "com.google.dagger:dagger:${daggerVersion}",
+            "dagger-compiler"              : "com.google.dagger:dagger-compiler:${daggerVersion}",
+
+            //facebook
+            "stetho"                       : "com.facebook.stetho:stetho:${stethoVersion}",
+            "stetho-okhttp3"               : "com.facebook.stetho:stetho-okhttp3:${stethoVersion}",
+            "stetho-js-rhino"              : "com.facebook.stetho:stetho-js-rhino:${stethoVersion}",
+            "stetho-urlconnection"         : "com.facebook.stetho:stetho-urlconnection:${stethoVersion}",
+
+            //SmartRefreshLayout
+            "SmartRefreshLayout"           : "com.scwang.smartrefresh:SmartRefreshLayout:${smartRefreshLayoutVersion}",
+            "SmartRefreshHeader"           : "com.scwang.smartrefresh:SmartRefreshHeader:${smartRefreshLayoutVersion}",
+
+            //litepal
+            "litepal_core"                 : "org.litepal.android:core:1.5.0",
+
+            //zxing
+            "zxing"                        : "com.google.zxing:core:3.3.0",
+
+            //gson
+            "gson"                         : "com.google.code.gson:gson:2.8.0",
+
+            //eventbus
+            "eventbus"                     : "org.greenrobot:eventbus:${eventbusVersion}",
+
+            //okhttp
+            "okhttp"                       : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            "okhttp3-logging-interceptor"  : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+
+            //others
+            "ormlite-android"              : "com.j256.ormlite:ormlite-android:${ormLiteVersion}",
+            "butterknife"                  : "com.jakewharton:butterknife:${butterKnifeVersion}",
+            "butterknife-compiler"         : "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+            "retrofit2-fastjson-converter" : "com.github.BaronZ88:Retrofit2-FastJson-Converter:1.2",
+            "systembartint"                : "com.readystatesoftware.systembartint:systembartint:1.0.3",
+            "Android-PickerView"           : "com.contrarywind:Android-PickerView:3.2.3",
+            "recycleritemdecoration"       : "com.dinuscxj:recycleritemdecoration:1.0.0",
+            "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.3.3",
+            "rxpermissions"                : "com.tbruyelle.rxpermissions2:rxpermissions:0.9.3@aar",
+            "flowlayout-lib"               : "com.zhy:flowlayout-lib:1.0.3",
+            "roundedimageview"             : "com.makeramen:roundedimageview:2.2.1",
+            "permission_acp"               : "com.mylhyl:acp:1.1.7",
+            "picture_library"              : "com.github.LuckSiege.PictureSelector:picture_library:v2.1.0",
+            "ultra-ptr"                    : "in.srain.cube:ultra-ptr:1.0.11"
+    ]
+
+    //home是否是作为模块，true的时候是，false的时候可以独立运行
+    isMouleDebugHome = true
+    isMouleDebugMe = true
+    isMouleDebugMarket = true
+    isMouleDebugFont = true
+    isModuleMain = true
+
+    isBetaDebug = true
+    isReleaseDebug = true
+    isProductDebug = true
+
+    signPath = '/Users/albert/Documents/zack/code/signed/c/CProject.jks'
+
+}

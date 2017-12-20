@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:divider="@drawable/item_divider_1dp_vertical"
+    android:orientation="horizontal"
+    android:showDividers="middle">
+
+    <LinearLayout
+        android:id="@+id/home_notices_ll"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:gravity="center"
+        android:minHeight="32dp"
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@color/color_bg_blue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin_6"
+            android:gravity="center"
+            android:text="用户须知"
+            android:textColor="@color/common_text_color_333333"
+            android:textSize="@dimen/common_font_15" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/home_contracts_ll"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:gravity="center"
+        android:minHeight="32dp"
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@color/color_bg_blue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin_6"
+            android:gravity="center"
+            android:text="联系客服"
+            android:textColor="@color/common_text_color_333333"
+            android:textSize="@dimen/common_font_15" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/home_about_ll"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:gravity="center"
+        android:minHeight="32dp"
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@color/color_bg_blue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin_6"
+            android:gravity="center"
+            android:text="关于我们"
+            android:textColor="@color/common_text_color_333333"
+            android:textSize="@dimen/common_font_15" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

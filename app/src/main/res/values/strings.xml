@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">组件</string>
+    <string name="app_name_beta">组件 beta</string>
+    <string name="app_name_release">组件 release</string>
+    <string name="app_name_product">组件 product</string>
+
+</resources>

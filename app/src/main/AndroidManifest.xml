@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.hdh.mall.all">
+
+
+    <application
+        android:name="com.hdh.mall.all.MuApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="${shop_app_name}${shop_app_suffix}"
+        android:supportsRtl="true"
+        android:textAllCaps="false"
+        android:theme="@style/AppTheme"
+
+        tools:replace="android:name">
+
+
+
+
+
+        <!-- 支付宝 微信 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+
+
+        <!-- 微信支付 -->
+        <activity
+            android:name="com.hdh.pay.weixin.WXPayEntryActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity-alias
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:targetActivity="com.hdh.pay.weixin.WXPayEntryActivity" />
+        <!-- 微信支付 end -->
+        <!-- 支付宝 微信 -->
+
+
+        <!--升级apk需要-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/apk_install_file_paths" />
+        </provider>
+
+        <!-- 上传头像 -->
+        <provider
+            android:name="com.hdh.mall.all.util.MyFileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+
+
+        <activity
+            android:name="com.hdh.mall.main.SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenTheme">
+
+            <intent-filter >
+
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>

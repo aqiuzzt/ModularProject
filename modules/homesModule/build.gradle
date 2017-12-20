@@ -1,0 +1,120 @@
+if (rootProject.ext.isMouleDebugHome) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+//        resourcePrefix "home_"
+
+        if (!rootProject.ext.isMouleDebugHome) {
+            applicationId "com.hdh.mall.home"
+        }
+
+        //ARouter 配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    android {
+        publishNonDefault true
+    }
+
+    buildTypes {
+
+        debug {
+            debuggable rootProject.ext.isBetaDebug
+            buildConfigField "int", "ENVIRONMENT", "1"
+        }
+        release {
+            debuggable rootProject.ext.isReleaseDebug
+            buildConfigField "int", "ENVIRONMENT", "2"
+        }
+
+        product {
+            debuggable rootProject.ext.isProductDebug
+            buildConfigField "int", "ENVIRONMENT", "3"
+        }
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res', 'src/main/res-lsg']
+            if (!rootProject.ext.isMouleDebugHome) {
+                manifest.srcFile 'src/debug/AndroidManifest.xml'
+                java.srcDir 'src/debug/java/'
+            } else {
+                manifest.srcFile 'src/release/AndroidManifest.xml'
+                java.srcDir 'src/release/java/'
+            }
+        }
+
+        dbb {
+            res.srcDirs = ['src/dbb/res']
+            java.srcDirs = ['src/dbb/java']
+
+        }
+        gjeg {
+            res.srcDirs = ['src/gjeg/res']
+            java.srcDirs = ['src/gjeg/java']
+        }
+        hcwx {
+            res.srcDirs = ['src/hcwx/res']
+            java.srcDirs = ['src/hcwx/java']
+
+        }
+        lsg {
+            res.srcDirs = ['src/lsg/res']
+            java.srcDirs = ['src/lsg/java']
+        }
+    }
+
+    flavorDimensions "mode"
+    productFlavors {//不同定制的产品，构建差异非常小的产品版本
+        dbb {
+
+        }
+        gjeg {
+
+        }
+
+        hcwx {
+        }
+
+        lsg {
+        }
+
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    api project(':basicLibs:hBase')
+    annotationProcessor rootProject.ext.dependencies["aroutercompiler"]
+
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+}

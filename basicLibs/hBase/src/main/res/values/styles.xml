@@ -1,0 +1,222 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.Base" />
+
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">#1000</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/colorWindowBackground</item>
+        <item name="toolbarNavigationButtonStyle">@style/ActionBarNavigationButtonStyle</item>
+
+    </style>
+
+    <style name="ActionBarNavigationButtonStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:scaleType">center</item>
+    </style>
+
+
+    <style name="Widget.MaterialProgressBar.ProgressBar.Horizontal" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateDrawable">@null</item>
+        <item name="android:minHeight">2dp</item>
+        <item name="android:maxHeight">2dp</item>
+    </style>
+
+    <style name="DialogVerticalLine">
+        <item name="android:background">@color/colorDividerLine</item>
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+
+    <style name="HorizontalDivider">
+        <item name="android:background">#efeff4</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="HorizontalDivider.Black" parent="HorizontalDivider">
+        <item name="android:background">@color/colorDividerLine</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="HorizontalDivider.margin.Black" parent="HorizontalDivider">
+        <item name="android:background">@color/colorDividerLine</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginLeft">@dimen/dimenDividerMargin17dp</item>
+    </style>
+
+    <style name="HorizontalDivider.login_margin.Black" parent="HorizontalDivider">
+        <item name="android:background">@color/color_bg_yellow</item>
+        <item name="android:layout_height">0.8dp</item>
+        <item name="android:layout_marginLeft">@dimen/dimenDividerMargin17dp</item>
+        <item name="android:layout_marginRight">@dimen/dimenDividerMargin17dp</item>
+    </style>
+
+    <style name="PopupWindowStyle">
+        <item name="android:windowEnterAnimation">@anim/anim_slide_to_top</item>
+        <item name="android:windowExitAnimation">@anim/anim_slide_from_top</item>
+    </style>
+
+    <style name="ItemStyle">
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingLeft">17dp</item>
+        <item name="android:paddingRight">17dp</item>
+    </style>
+
+
+    <style name="ListItemStyle">
+        <item name="android:layout_height">@dimen/common_list_item_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">17dp</item>
+        <item name="android:paddingRight">17dp</item>
+    </style>
+
+
+    <style name="ItemEditTextStyle">
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/colorTextBlack</item>
+        <item name="android:textColorHint">@color/colorTextGreyInsert</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textCursorDrawable">@drawable/color_cursor</item>
+    </style>
+
+    <style name="NoBackgroundDialogStyle" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimAmount">0.1</item>
+        <!-- 设置无遮罩层 -->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="DropDownWindowStyle">
+        <item name="android:windowEnterAnimation">@anim/anim_slide_from_top</item>
+        <item name="android:windowExitAnimation">@anim/anim_slide_to_top</item>
+    </style>
+
+    <style name="TextTabLayoutTextSize">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="LargeTextTabLayoutTextSize">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!--分隔tab选择样式-->
+    <style name="NormalTabLayoutStyle">
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:divider">@drawable/item_divider_tab_layout</item>
+        <item name="android:dividerPadding">4.5dp</item>
+        <item name="android:showDividers">middle</item>
+        <item name="tabIndicatorColor">@color/color_bg_yellow</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabIndicatorHeight">1dp</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabSelectedTextColor">@color/color_bg_yellow</item>
+        <item name="tabTextAppearance">@style/TextTabLayoutTextSize</item>
+        <item name="tabTextColor">@color/font_common_text_color_666666</item>
+    </style>
+
+    <style name="ToolBarStyle1" parent="@style/ThemeOverlay.AppCompat.Light">
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:actionBarSize">@dimen/actionBarHeight</item>
+        <item name="actionBarSize">@dimen/actionBarHeight</item>
+        <item name="android:minHeight">@dimen/actionBarHeight</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+
+
+
+    <!--全屏-->
+    <style name="FullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+
+    <style name="common_btn_style" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/common_button_height</item>
+        <item name="android:layout_marginLeft">@dimen/common_margin_40</item>
+        <item name="android:layout_marginRight">@dimen/common_margin_40</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/common_btn_bg_selector</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <!--默认样式 注意* 样式只可修改，不能删除任何一项 否则报错-->
+    <style name="picture.default.style" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!--标题栏背景色-->
+        <item name="colorPrimary">@color/bar_grey</item>
+        <!--状态栏背景色-->
+        <item name="colorPrimaryDark">@color/bar_grey</item>
+        <!--是否改变图片列表界面状态栏字体颜色为黑色-->
+        <item name="picture.statusFontColor">false</item>
+        <!--返回键图标-->
+        <item name="picture.leftBack.icon">@drawable/picture_back</item>
+        <!--标题下拉箭头-->
+        <item name="picture.arrow_down.icon">@drawable/arrow_down</item>
+        <!--标题上拉箭头-->
+        <item name="picture.arrow_up.icon">@drawable/arrow_up</item>
+        <!--标题文字颜色-->
+        <item name="picture.title.textColor">@color/white</item>
+        <!--标题栏右边文字-->
+        <item name="picture.right.textColor">@color/white</item>
+        <!--图片列表勾选样式-->
+        <item name="picture.checked.style">@drawable/checkbox_selector</item>
+        <!--开启图片列表勾选数字模式-->
+        <item name="picture.style.checkNumMode">false</item>
+        <!--选择图片样式0/9-->
+        <item name="picture.style.numComplete">false</item>
+        <!--图片列表底部背景色-->
+        <item name="picture.bottom.bg">@color/color_fa</item>
+        <!--图片列表预览文字颜色-->
+        <item name="picture.preview.textColor">@color/tab_color_true</item>
+        <!--图片列表已完成文字颜色-->
+        <item name="picture.complete.textColor">@color/tab_color_true</item>
+        <!--图片已选数量圆点背景色-->
+        <item name="picture.num.style">@drawable/num_oval</item>
+        <!--预览界面标题文字颜色-->
+        <item name="picture.ac_preview.title.textColor">@color/white</item>
+        <!--预览界面已完成文字颜色-->
+        <item name="picture.ac_preview.complete.textColor">@color/tab_color_true</item>
+        <!--预览界面标题栏背景色-->
+        <item name="picture.ac_preview.title.bg">@color/bar_grey</item>
+        <!--预览界面底部背景色-->
+        <item name="picture.ac_preview.bottom.bg">@color/bar_grey_90</item>
+        <!--预览界面状态栏颜色-->
+        <item name="picture.status.color">@color/bar_grey_90</item>
+        <!--预览界面返回箭头-->
+        <item name="picture.preview.leftBack.icon">@drawable/picture_back</item>
+        <!--是否改变预览界面状态栏字体颜色为黑色-->
+        <item name="picture.preview.statusFontColor">false</item>
+        <!--裁剪页面标题背景色-->
+        <item name="picture.crop.toolbar.bg">@color/bar_grey</item>
+        <!--裁剪页面状态栏颜色-->
+        <item name="picture.crop.status.color">@color/bar_grey</item>
+        <!--裁剪页面标题文字颜色-->
+        <item name="picture.crop.title.color">@color/white</item>
+        <!--相册文件夹列表选中图标-->
+        <item name="picture.folder_checked_dot">@drawable/orange_oval</item>
+    </style>
+
+
+</resources>

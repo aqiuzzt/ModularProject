@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="ToolBarStyle" parent="@style/ThemeOverlay.AppCompat.Light">
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:actionBarSize">@dimen/actionBarHeight</item>
+        <item name="actionBarSize">@dimen/actionBarHeight</item>
+        <item name="android:minHeight">@dimen/actionBarHeight</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">1dp</item>
+        <!--<item name="contentInsetStart">0dp</item>-->
+        <!--<item name="titleMargin">0dp</item>-->
+    </style>
+
+    <style name="ToolbarPopupTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+        <item name="android:colorBackground">#000</item>
+        <item name="android:textColor">@color/color_bg_yellow</item>
+    </style>
+
+    <style name="ActionMenuTextStyle" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+        <item name="actionMenuTextColor">@color/color_bg_yellow</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginRight">8dp</item>
+    </style>
+
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <!-- 是否覆盖overflow按钮，默认为true，即盖住Toolbar -->
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownSelector">?attr/listChoiceBackgroundIndicator</item>
+        <item name="android:popupBackground" tools:ignore="PrivateResource">
+            @drawable/abc_popup_background_mtrl_mult
+        </item>
+        <item name="android:dropDownVerticalOffset">0dip</item>
+        <item name="android:dropDownHorizontalOffset">0dip</item>
+        <item name="android:dropDownWidth">wrap_content</item>
+    </style>
+
+
+    <!--数字进度条-->
+
+    <!--数字进度条-->
+
+
+    <style name="AlertDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
+    <style name="ios_bottom_dialog" parent="android:style/Theme.Dialog">
+        <!--背景颜色及和透明程度-->
+        <item name="android:windowBackground">@color/transparent</item>
+        <!--是否去除标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否去除边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+
+    <style name="ios_bottom_dialog_anim" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <!-- 进入时的动画 -->
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+        <!-- 退出时的动画 -->
+    </style>
+
+
+    <!--底部弹框-->
+    <style name="BottomDialogAnim" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+
+    <!--底部弹框-->
+
+    <style name="BottomSheetAnimation" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in
+        </item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out
+        </item>
+    </style>
+
+
+    <style name="HorizontalDivider">
+        <item name="android:background">#efeff4</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="HorizontalDivider.Black" parent="HorizontalDivider">
+        <item name="android:background">@color/colorDividerLine</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+
+    <style name="DialogVerticalLine">
+        <item name="android:background">@color/colorDividerLine</item>
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+
+    <declare-styleable name="AspectRatioCardView">
+        <attr name="minHeight" format="dimension" />
+        <attr name="ratio" format="float" />
+
+    </declare-styleable>
+
+</resources>

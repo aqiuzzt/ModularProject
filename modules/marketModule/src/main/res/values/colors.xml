@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="market_color_bg_grey_cccccc">#cccccc</color>
+    <color name="market_color_bg_red_f97e14">#f97e14</color>
+    <color name="market_search_box_bg">#ebebeb</color>
+    <color name="market_search_box_bg_write">#7Fffffff</color>
+
+    <color name="market_home_txt_red_df3535">#df3535</color>
+</resources>

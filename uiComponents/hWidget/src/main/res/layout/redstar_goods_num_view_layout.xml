@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="30dp">
+
+    <ImageView
+        android:id="@+id/red_star_multiple_add_iv"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_red_star_multiple_add" />
+
+    <ImageView
+        android:id="@+id/red_star_multiple_sub_iv"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/ic_red_star_multiple_sub" />
+
+    <TextView
+        android:id="@+id/red_star_multiple_count_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="@dimen/common_font_14"
+        tools:text="100" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="31dp"
+        android:layout_marginRight="31dp"
+        android:background="@color/color_bg_yellow" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="31dp"
+        android:layout_marginRight="31dp"
+        android:background="@color/color_bg_yellow" />
+</RelativeLayout>

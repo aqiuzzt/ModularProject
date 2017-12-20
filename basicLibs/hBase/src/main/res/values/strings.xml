@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="update_sure">更新</string>
+    <string name="update_canel">取消</string>
+
+    <string name="logout_tips">您已经在其他设备上登录，请重新登录。</string>
+</resources>

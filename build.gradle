@@ -1,0 +1,51 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "dependencies.gradle"
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+        }
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+
+        //NullAway
+//        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-SNAPSHOT'
+        //NullAway
+//        classpath "net.ltgt.gradle:gradle-errorprone-plugin:0.0.13"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+//配置BaseRecyclerViewAdapterHelper
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven {
+            url 'https://maven.google.com/'
+        }
+
+
+        flatDir {
+            // 由于Library module中引用了 paysdk 库的 aar，在多 module 的情况下，
+            // 其他的module编译会报错，所以需要在所有工程的repositories
+            // 下把Library module中的libs目录添加到依赖关系中
+            dirs project(':basicLibs:hCommon').file('libs')
+//            dirs project(':basicLibs:hBase').file('libs')
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

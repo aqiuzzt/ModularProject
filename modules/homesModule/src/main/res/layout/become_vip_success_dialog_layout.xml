@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lLayout_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alert_bg"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/become_vip_success" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/common_margin_30"
+        android:layout_marginTop="@dimen/common_margin_30"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="恭喜升级成功！请"
+            android:textColor="@color/common_text_color_333333"
+            android:textSize="@dimen/common_font_16" />
+
+        <TextView
+            android:id="@+id/become_vip_login_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="重新登录"
+            android:textColor="@color/color_bg_red_ff8447"
+            android:textSize="@dimen/common_font_16" />
+    </LinearLayout>
+
+
+</LinearLayout>

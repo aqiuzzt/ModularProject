@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--Loading-->
+    <ViewStub
+        android:id="@+id/vs_ph_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/inflated_id_ph_loading"
+        android:layout="@layout/layout_placeholder_loading" />
+    <!--Empty-->
+    <ViewStub
+        android:id="@+id/vs_ph_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/inflated_id_ph_empty"
+        android:layout="@layout/layout_placeholder_empty" />
+    <!--Error-->
+    <ViewStub
+        android:id="@+id/vs_ph_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/inflated_id_ph_error"
+        android:layout="@layout/layout_placeholder_error" />
+    <!--No Network-->
+    <ViewStub
+        android:id="@+id/vs_ph_no_net"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/inflated_id_ph_no_net"
+        android:layout="@layout/layout_placeholder_none" />
+
+</FrameLayout>

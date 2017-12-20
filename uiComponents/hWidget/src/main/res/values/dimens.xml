@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="actionBarHeight">@dimen/dimenToolbarHeight</dimen>
+    <dimen name="searchToolbarHeight">30dp</dimen>
+    <dimen name="textSizeToolbarTitle">18sp</dimen>
+    <dimen name="dimenToolbarHeight">40dp</dimen>
+    <dimen name="dimenDividerHeight_0dp">0dp</dimen>
+    <dimen name="dimenDividerHeight_4dp">4dp</dimen>
+    <dimen name="dimenDividerHeight_7dp">7dp</dimen>
+    <dimen name="dimenDividerHeight_20dp">20dp</dimen>
+    <dimen name="default_left_margin_divider">0dp</dimen>
+
+    <dimen name="common_list_item_height">48dp</dimen>
+
+    <dimen name="common_button_height">40dp</dimen>
+    <dimen name="common_font_12">12sp</dimen>
+    <dimen name="common_font_14">14sp</dimen>
+    <dimen name="common_font_15">15sp</dimen>
+    <dimen name="common_font_16">16sp</dimen>
+    <dimen name="common_font_17">17sp</dimen>
+    <dimen name="common_font_20">20sp</dimen>
+    <dimen name="common_margin_17">17dp</dimen>
+    <dimen name="common_margin_4">4dp</dimen>
+    <dimen name="common_margin_10">10dp</dimen>
+    <dimen name="common_margin_30">30dp</dimen>
+    <dimen name="common_margin_20">20dp</dimen>
+
+
+</resources>

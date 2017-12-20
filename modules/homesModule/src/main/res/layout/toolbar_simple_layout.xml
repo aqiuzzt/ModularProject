@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/toolbar"
+    style="@style/ToolBarStyle"
+    app:buttonGravity="bottom"
+    app:contentInsetEnd="0dp"
+    app:contentInsetLeft="0dp"
+    app:contentInsetRight="0dp"
+    app:contentInsetStart="0dp"
+    app:layout_scrollFlags="enterAlways|scroll"
+    app:maxButtonHeight="@dimen/actionBarHeight"
+    app:paddingEnd="0dp"
+    app:paddingStart="0dp"
+    app:popupTheme="@style/ToolbarPopupTheme"
+    app:theme="@style/ActionMenuTextStyle"
+    app:titleMarginStart="0dp">
+
+    <TextView
+        android:id="@id/toolbar_title_view"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/actionBarHeight"
+        android:layout_gravity="center_horizontal|bottom"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:maxWidth="220dp"
+        android:textColor="@color/color_bg_red_ff8447"
+        android:textSize="@dimen/textSizeToolbarTitle"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@id/toolbar_menu_title_view"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/actionBarHeight"
+        android:layout_gravity="center_horizontal|right|bottom"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:maxWidth="220dp"
+        android:textColor="@color/color_bg_red_ff8447"
+        android:textSize="@dimen/common_font_14" />
+</android.support.v7.widget.Toolbar>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MainModule</string>
+
+    <string name="home_page">首页</string>
+    <string name="market_page">商城</string>
+    <string name="mine_page">我的</string>
+
+
+    <!--版本更新-->
+    <string name="update_sure">更新</string>
+    <string name="update_canel">取消</string>
+    <string name="update_downloading_tips">正在下载新版本...</string>
+
+</resources>

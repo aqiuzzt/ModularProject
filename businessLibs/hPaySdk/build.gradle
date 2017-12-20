@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    android {
+        publishNonDefault true
+    }
+    buildTypes {
+
+        debug {
+            debuggable rootProject.ext.isBetaDebug
+            buildConfigField "int", "ENVIRONMENT", "1"
+        }
+        release {
+            debuggable rootProject.ext.isReleaseDebug
+            buildConfigField "int", "ENVIRONMENT", "2"
+        }
+
+        product {
+            debuggable rootProject.ext.isProductDebug
+            buildConfigField "int", "ENVIRONMENT", "3"
+        }
+    }
+
+    sourceSets {
+        main {
+            //指定引入ｓｏ包的路径
+            jniLibs.srcDirs = ['libs']
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/']
+        }
+
+    }
+
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+
+    api rootProject.ext.dependencies["appcompat-v7"]
+    //微信支付最新sdk接入
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+
+}
+
+
+

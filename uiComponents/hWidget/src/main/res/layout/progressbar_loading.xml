@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hdh.widget.kprogresshud.BackgroundLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/progressbar_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <FrameLayout
+        android:id="@+id/progressbar_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/progressbar_label_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/common_font_14"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/progressbar_details_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/common_font_12"
+        android:visibility="gone" />
+</com.hdh.widget.kprogresshud.BackgroundLayout>

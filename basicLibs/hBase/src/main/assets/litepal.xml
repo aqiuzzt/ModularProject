@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <!--数据库名称-->
+    <dbname value="jcgy" ></dbname>
+
+    <!--版本号-->
+    <version value="1" ></version>
+
+    <!--关系表-->
+    <list>
+        <mapping class="com.hdh.android.mail.base.bean.GoodsCategoryBean"></mapping>
+        <mapping class="com.hdh.android.mail.base.bean.ImgUrlBean"></mapping>
+    </list>
+</litepal>

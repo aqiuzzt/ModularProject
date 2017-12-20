@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="210dp"
+                android:layout_marginBottom="@dimen/common_margin_6"
+                android:background="@color/color_bg_blue">
+
+                <LinearLayout
+                    android:id="@+id/per_head_image_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="80dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/per_head_image"
+                        android:layout_width="@dimen/me_common_head_image"
+                        android:layout_height="@dimen/me_common_head_image"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/ic_launcher_round"
+                        app:riv_oval="true" />
+
+                    <TextView
+                        android:id="@+id/per_nickname_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/common_margin_4"
+                        android:textColor="@color/common_text_color_333333"
+                        android:textSize="@dimen/common_font_16"
+                        tools:text="ddddddd" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/per_logout_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:paddingBottom="@dimen/common_margin_14"
+                    android:paddingLeft="@dimen/common_margin_17"
+                    android:paddingRight="@dimen/common_margin_17"
+                    android:paddingTop="40dp"
+                    android:src="@drawable/per_ic_logout" />
+
+                <ImageView
+                    android:id="@+id/per_setting_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:paddingBottom="@dimen/common_margin_14"
+                    android:paddingLeft="@dimen/common_margin_17"
+                    android:paddingRight="@dimen/common_margin_17"
+                    android:paddingTop="40dp"
+                    android:src="@drawable/per_ic_setting" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/common_margin_4"
+                    android:paddingLeft="@dimen/common_margin_17"
+                    android:paddingRight="@dimen/common_margin_17">
+
+                    <TextView
+                        android:id="@+id/per_account_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/common_text_color_666666"
+                        android:textSize="@dimen/common_font_14"
+                        tools:text="ddddfffff" />
+
+                    <TextView
+                        android:id="@+id/per_phone_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/common_text_color_666666"
+                        android:textSize="@dimen/common_font_14"
+                        tools:text="223333333" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+
+            <View style="@style/HorizontalDivider.Black" />
+
+            <include layout="@layout/me_layout_person_list3" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/me_status_bar_layout" />
+
+
+</LinearLayout>
